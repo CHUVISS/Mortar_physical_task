@@ -1,4 +1,4 @@
-#include <C:\Users\SRB\Desktop\CodeBlocks\TX\TXLib.h>
+#include <Your library path>
 void sharic();
 void palochka();
 void martira();
