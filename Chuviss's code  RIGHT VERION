@@ -1,0 +1,45 @@
+#include <TXLib.h>
+void sharic(int x, int y);
+void palochka(int x);
+void martira(int x);
+int main()
+{
+    txCreateWindow(500, 450);
+
+    int t = 0;
+    while (t < 18)
+    {
+        int x = 0;
+        int y = 0;
+        txSetFillColor(RGB(0, 191, 255));
+        txRectangle(0, 0, 500, 450);
+        txSetColor(TX_BLACK);
+
+        palochka(x);
+        martira(x);
+        sharic(x, y);
+        t++;
+        txSleep(100);
+    }
+    return 0;
+}
+void martira(int x)
+{
+    txSetFillColor(RGB(102, 255, 0));
+    txRectangle(0, 450, 175, 300);
+    txSetFillColor(RGB(27, 30, 35));
+    POINT Wert[4] = {{120, 285}, {x+130, 250}, {x+150, 250}, {160,285}};
+    txPolygon(Wert, 4);
+    txSetFillColor(RGB(118, 92, 72));
+    txRectangle(110, 300, 170, 285);
+};
+void palochka(int x)
+{
+    txSetFillColor(RGB(128, 128, 128));
+    txRectangle(x+90, 310, x+94, 280);
+};
+void sharic(int x, int y)
+{
+    txSetFillColor(TX_BLACK);
+    txCircle(x+140, y+230, 10);
+}
